@@ -1,11 +1,11 @@
 "use strict";
 
-const assert = require("assert");
-const crypto = require("crypto");
-const extend = require("extend");
-const axios = require('axios').default;
-const qs = require('qs');
-const { create } = require('xmlbuilder2');
+const assert      = require("assert");
+const crypto      = require("crypto");
+const extend      = require("extend");
+const axios       = require('axios').default;
+const qs          = require('qs');
+const { create }  = require('xmlbuilder2');
 
 class SagepayAdminApiClient {
     constructor(options) {
@@ -47,14 +47,14 @@ function sign(option) {
     delete options.vendor;
     delete options.password;
     delete options.command;
-    options = extend({}, {vendor: option.vendor}, options);
-    options = extend({}, {user: option.user}, options);
-    options = extend({}, {command: option.command}, options);
-    options = extend({}, options, {password: option.password});
+    options = extend({}, { vendor: option.vendor }, options);
+    options = extend({}, { user: option.user }, options);
+    options = extend({}, { command: option.command }, options);
+    options = extend({}, options, { password: option.password });
     
     function render_xml(js_object) {
         const converted_xml = create({ vspaccess: js_object });
-        let xml_str = converted_xml.toString({prettyPrint: false});
+        let xml_str = converted_xml.toString({ prettyPrint: false });
         xml_str = remove_xmldef(remove_linebreak(xml_str));
         return xml_str;
     }
