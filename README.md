@@ -48,11 +48,17 @@ Creates a new instance.
 #### Parameters
 
 * `options` Required, values to pass with the request.
-* `options.endpoint` Optional, defaults to the <b>live system</b>.
+* `options.endpoint` Optional, defaults to the **live** environment.
 * `options.user` Required, passed as the `user` to the API.
 * `options.password` Required, used to sign the requests.
 * `options.vendor` Required, passed as the `vendor` to the API.
-* `options.command` Required, the SagePay API requires this at a minimum.
+* `options.command` Required, command name to be run in SagePay Admin Panel.
+
+If you want to play with sandbox, just set an environment variable like below and that's good to go.
+
+```bash
+export SAGEPAY_ENV='test'
+```
 
 ### SagepayAdminApiClient.request
 

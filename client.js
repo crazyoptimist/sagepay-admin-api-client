@@ -7,6 +7,8 @@ const axios       = require('axios').default;
 const qs          = require('qs');
 const { create }  = require('xmlbuilder2');
 
+const SAGEPAY_ENV = process.env.SAGEPAY_ENV || 'live';
+
 class SagepayAdminApiClient {
     constructor(options) {
         assert(options, "options must be provided");
@@ -15,7 +17,7 @@ class SagepayAdminApiClient {
         assert(options.vendor, "options.vendor must be provided");
 
         this.options = extend({
-            endpoint: "https://live.sagepay.com/access/access.htm"
+            endpoint: `https://${SAGEPAY_ENV}.sagepay.com/access/access.htm`
         }, options);
     }
 
