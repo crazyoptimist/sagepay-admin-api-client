@@ -4,7 +4,7 @@
   "description": "Enables management of sagepay admin and report panel through API",
   "main": "index.js",
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.21.2",
     "extend": "^3.0.1",
     "nconf": "^0.10.0",
     "qs": "6.9.6",
